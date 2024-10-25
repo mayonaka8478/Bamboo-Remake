@@ -38,12 +38,6 @@ public class LogPaperBush extends BlockAxisAligned {
 			this.setBlockBounds(0.5f - f, 0.5f - f, 0.0f, 0.5f + f, 0.5f + f, 1.0f);
 		} else if (side == Side.EAST) {
 			this.setBlockBounds(0.0f, 0.5f - f, 0.5f - f, 1.0f, 0.5f + f, 0.5f + f);
-		} else if (side == Side.ALTNORTH) {
-			this.setBlockBounds(1.0f, 1.0f - f, 1.0f - f, 1.0f, 1.0f + f, 1.0f + f);
-		} else if (side == Side.ALTEAST) {
-			this.setBlockBounds(1.0f, 1.0f - f, 1.0f - f, 1.0f, 1.0f + f, 1.0f + f);
-		} else if (side == Side.ALTALL) {
-			this.setBlockBounds(1.0f, 1.0f - f, 1.0f - f, 1.0f, 1.0f + f, 1.0f + f);
 		} else {
 			this.setBlockBounds(0.5f - f, 0.0F, 0.5f - f, 0.5f + f, 1.0f, 0.5f + f);
 		}
@@ -56,21 +50,14 @@ public class LogPaperBush extends BlockAxisAligned {
 			return Side.NORTH;
 		} else if (meta == 2) {
 			return Side.EAST;
-		} else if (meta == 3) {
-			return Side.ALTNORTH;
-		} else if (meta == 4) {
-			return Side.ALTEAST;
-		} else if (meta == 5) {
-			return Side.ALTALL;
 		} else
 			return Side.NONE;
 	}
-}
 
-@Override
-public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
-	return null;
-}
+	@Override
+	public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int z) {
+		return null;
+	}
 
 	//ブロック隣接時に透けて見えるのを阻止するやつ
 	@Override
@@ -83,10 +70,11 @@ public AABB getCollisionBoundingBoxFromPool(WorldSource world, int x, int y, int
 		return false;
 	}
 
-@Override
-public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
-	switch (dropCause) {
-		default:
-			return new ItemStack[]{new ItemStack(this)};
+	@Override
+	public ItemStack[] getBreakResult(World world, EnumDropCause dropCause, int x, int y, int z, int meta, TileEntity tileEntity) {
+		switch (dropCause) {
+			default:
+				return new ItemStack[]{new ItemStack(this)};
+		}
 	}
 }

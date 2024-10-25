@@ -2,22 +2,25 @@
   "variants": {
     "axis=x": {
       "model": "washimod:block/log_paper_bush",
-      "x": 90,
-      "y": 90
+      "x": 90
     },
     "axis=y": {
       "model": "washimod:block/log_paper_bush"
     },
     "axis=z": {
       "model": "washimod:block/log_paper_bush",
-      "y": 90
+      "z": 90
     },
     "axis=y,alt=x": {
-      "model": "washimod:block/log_paper_bush_alt",
-      "x": 90
+      "model": "washimod:block/log_paper_bush_alt"
     },
     "axis=y,alt=z": {
-      "model": "washimod:block/log_paper_bush_alt"
+      "model": "washimod:block/log_paper_bush_alt",
+      "y": 90
+    },
+    "axis=y,alt=s": {
+      "model": "washimod:block/log_paper_bush_alt",
+      "x": 90
     },
     "axis=y,alt=a": {
       "model": "washimod:block/log_paper_bush_alt_all"

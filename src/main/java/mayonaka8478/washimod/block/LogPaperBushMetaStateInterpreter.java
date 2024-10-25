@@ -12,9 +12,9 @@ public class LogPaperBushMetaStateInterpreter extends MetaStateInterpreter {
 	@Override
 	public HashMap<String, String> getStateMap(WorldSource worldSource, int x, int y, int z, Block block, int meta) {
 		HashMap<String, String> result = new HashMap<>();
-		int Alt = meta & 0b101;
+		int Alt = meta & 4;
 		result.put("axis", String.valueOf(BlockAxisAligned.metaToAxis(meta)).toLowerCase());
-		result.put("alt", new String[]{"x", "z", "a"}[Alt]);
+		result.put("alt", new String[]{"x", "z", "s", "a"}[Alt]);
 		return result;
 	}
 }
